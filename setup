@@ -3,4 +3,4 @@
 # vim setup
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-ln -sf ~/repositories/config-files/.vimrc ~/.vimrc
+ln -sf ~/repos/dotfiles/vim/.vimrc ~/.vimrc
