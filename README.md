@@ -1,7 +1,7 @@
 # Dotfiles
 
-The configuration files I use for different development tools. These are meant to be symlinked.
+The configuration files I use for different development tools. These files get symlinked to the correct paths so I can keep them up to date in git.
 
-### Vim
-- Install [Plug](https://github.com/junegunn/vim-plug) for managing plugins
-- Symlink the configuration file. `ln -sf ~/repositories/config-files/.vimrc ~/.vimrc`
+### Setup
+- Add execution permissions to the setup script. `chmod +x setup`
+- Run the setup script. `./setup`
