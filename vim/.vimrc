@@ -29,6 +29,9 @@ set shiftwidth=4
 set expandtab
 set smartindent
 
+" swap files
+set directory^=$HOME/.vim/tmp//
+
 " coc config - these are mostly from repo readme to fix issues
 set encoding=utf-8
 set hidden
@@ -42,7 +45,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-let g:coc_global_extensions = ['coc-tsserver', 'coc-css']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-css', 'coc-eslint']
 
 map <leader>s :w<CR>
 map <leader>q :wq!<CR>
