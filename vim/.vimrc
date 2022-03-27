@@ -6,9 +6,15 @@ Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jparise/vim-graphql'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " colorscheme
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set background=dark
+set t_Co=256
 set termguicolors
 let ayucolor="dark"
 colorscheme ayu
@@ -49,3 +55,5 @@ let g:coc_global_extensions = ['coc-tsserver', 'coc-css', 'coc-eslint']
 
 map <leader>s :w<CR>
 map <leader>q :wq!<CR>
+nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>pf :Files<CR>
