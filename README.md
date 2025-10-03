@@ -4,13 +4,15 @@ Personal macOS development environment configuration.
 
 ## Fresh Machine Setup
 
-On a brand new Mac, run this one-liner to get started:
+On a brand new Mac, run this command to get started:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/tjuranek/dotfiles/main/bootstrap.sh | bash
+bash <(curl -fsSL https://raw.githubusercontent.com/tjuranek/dotfiles/master/bootstrap.sh)
 ```
 
 This clones the dotfiles repo to `~/repos/dotfiles` using HTTPS (no SSH key required).
+
+**Note**: You'll be prompted for your password during Homebrew installation (sudo access required).
 
 Then run the installer:
 

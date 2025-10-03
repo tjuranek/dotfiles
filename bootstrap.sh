@@ -9,7 +9,8 @@ echo "🚀 Bootstrapping dotfiles..."
 # Install Homebrew if not installed
 if ! command -v brew &> /dev/null; then
     echo "🍺 Installing Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo "⚠️  You may be prompted for your password (sudo access required)"
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     
     # Add Homebrew to PATH for Apple Silicon Macs
     if [[ -f "/opt/homebrew/bin/brew" ]]; then
