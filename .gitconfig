@@ -1,0 +1,22 @@
+[user]
+    name = Thomas Juranek
+    email = dev@thomasjuranek.com
+
+[github]
+    user = tjuranek
+
+[core]
+    editor = nvim
+    autocrlf = input
+
+[init]
+    defaultBranch = master
+
+[pull]
+    rebase = false
+
+[push]
+    default = simple
+
+[color]
+    ui = auto
