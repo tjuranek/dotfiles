@@ -1,5 +1,6 @@
 # CLI tools
-
+brew "azure-cli"
+brew "docker"
 brew "lazygit"
 brew "lazydocker"
 brew "git"
