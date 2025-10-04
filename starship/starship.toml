@@ -1,0 +1,19 @@
+format = "$directory$git_branch\n$character"
+
+palette = 'catppuccin_mocha'
+
+[directory]
+style = "bold blue"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "italic dimmed"
+
+[git_status]
+style = "bold yellow"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"

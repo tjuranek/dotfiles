@@ -18,6 +18,7 @@ brew bundle install
  mkdir -p "$HOME/.config"
 
  ln -sf "$PWD/.zshrc" "$HOME/.zshrc"
+ ln -sf "$PWD/starship/starship.toml" "$HOME/.config/starship.toml"
  ln -sf "$PWD/.gitconfig" "$HOME/.gitconfig"
  ln -sf "$PWD/ghostty" "$HOME/.config/ghostty"
  ln -sf "$PWD/btop" "$HOME/.config/btop"
