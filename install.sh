@@ -30,8 +30,11 @@ brew bundle install
  mkdir -p "$HOME/.ssh"
  ln -sf "$PWD/.ssh/config" "$HOME/.ssh/config"
  chmod 600 "$HOME/.ssh/config"
- chmod 700 "$HOME/.ssh"
- #
+  chmod 700 "$HOME/.ssh"
+  #
+
+# Switch git remote to SSH
+git remote set-url origin git@github.com:tjuranek/dotfiles.git
 
 # Create .config directories and symlinks
 mkdir -p "$HOME/.config/aerospace"
