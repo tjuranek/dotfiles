@@ -14,15 +14,17 @@ fi
 # Install packages from Brewfile
 brew bundle install
 
-# Install non-Homebrew software
-if [[ -x "./non-brew-software.sh" ]]; then
-    ./non-brew-software.sh
-else
-    echo "❌ non-brew-software.sh not found or not executable"
-fi
-
 # Create symlinks for dotfiles
+mkdir -p "$HOME/.config"
+
 ln -sf "$PWD/.zshrc" "$HOME/.zshrc"
+ln -sf "$PWD/ghostty" "$HOME/.config/ghostty"
+ln -sf "$PWD/btop" "$HOME/.config/btop"
+ln -sf "$PWD/btop/themes" "$HOME/.config/btop/themes"
+
+mkdir -p "$HOME/.config/btop"
+ln -sf "$PWD/btop" "$HOME/.config/btop"
+
 # ln -sf "$PWD/.gitconfig" "$HOME/.gitconfig"
 #
 
@@ -30,13 +32,11 @@ ln -sf "$PWD/.zshrc" "$HOME/.zshrc"
 mkdir -p "$HOME/.config/aerospace"
 ln -sf "$PWD/aerospace/aerospace.toml" "$HOME/.config/aerospace/aerospace.toml"
 
-mkdir -p "$HOME/.config/aerospace-swipe"
-ln -sf "$PWD/aerospace-swipe/config.json" "$HOME/.config/aerospace-swipe/config.json"
-
 # Apply macOS defaults
 if [[ "$OSTYPE" == "darwin"* ]]; then
     echo ""
     ./macos-defaults.sh
+    osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$PWD/wallpaper.jpg\""
 fi
 
 echo ""

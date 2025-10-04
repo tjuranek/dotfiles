@@ -1,6 +1,20 @@
 # CLI tools
+
+brew "lazygit"
+brew "lazydocker"
 brew "git"
 brew "neovim"
+brew "btop"
+brew "fzf"
+brew "eza"
+brew "zoxide"
+brew "ripgrep"
+brew "fd"
+
+cask "ghostty"
+cask "google-chrome"
+
+cask "font-caskaydia-mono-nerd-font"
 
 cask "1password"
 cask "1password-cli"

@@ -45,9 +45,16 @@ echo "🛠️ Applying custom preferences..."
 
 # Apply ONLY the dock settings you want
 echo "  • Configuring Dock..."
+defaults write com.apple.dock orientation -string "left"
+defaults write com.apple.dock tilesize -int 16
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0.5
+# Clear existing persistent apps for minimal dock
+defaults write com.apple.dock persistent-apps -array
+# Add minimal apps (example: Safari and Terminal)
+defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Safari.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Utilities/Terminal.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
 
 echo "  • Configuring Window Dragging..."
 defaults write -g NSWindowShouldDragOnGesture -bool true
