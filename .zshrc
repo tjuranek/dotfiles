@@ -15,11 +15,26 @@ zd() {
     z "$@" && printf "\U000F17A9 " && pwd || echo "Error: Directory not found"
   fi
 }
-open() {
-  xdg-open "$@" >/dev/null 2>&1 &
+ open() {
+   xdg-open "$@" >/dev/null 2>&1 &
+ }
+
+# 1Password SSH Agent Setup
+setup_1password_ssh() {
+  if command -v op >/dev/null 2>&1; then
+    if [ -z "$SSH_AUTH_SOCK" ] || [ ! -S "$SSH_AUTH_SOCK" ]; then
+      export SSH_AUTH_SOCK=~/.1password/agent.sock
+      if ! pgrep -f "op-ssh-sign" >/dev/null; then
+        op ssh sign --help >/dev/null 2>&1 || echo "1Password SSH agent not available. Ensure 1Password CLI is configured."
+      fi
+    fi
+  fi
 }
 
-# Directories
+# Initialize 1Password SSH agent on shell startup
+setup_1password_ssh
+
+ # Directories
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'

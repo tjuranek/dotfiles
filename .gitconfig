@@ -1,6 +1,7 @@
 [user]
     name = Thomas Juranek
     email = dev@thomasjuranek.com
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA8KxOexAye9QMk+Y8d+sTQAwFfdVPT6n/kSRqqEQqC4
 
 [github]
     user = tjuranek
@@ -20,3 +21,12 @@
 
 [color]
     ui = auto
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+
+[commit]
+	gpgsign = true

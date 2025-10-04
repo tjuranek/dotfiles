@@ -15,18 +15,23 @@ fi
 brew bundle install
 
 # Create symlinks for dotfiles
-mkdir -p "$HOME/.config"
+ mkdir -p "$HOME/.config"
 
-ln -sf "$PWD/.zshrc" "$HOME/.zshrc"
-ln -sf "$PWD/ghostty" "$HOME/.config/ghostty"
-ln -sf "$PWD/btop" "$HOME/.config/btop"
-ln -sf "$PWD/btop/themes" "$HOME/.config/btop/themes"
+ ln -sf "$PWD/.zshrc" "$HOME/.zshrc"
+ ln -sf "$PWD/.gitconfig" "$HOME/.gitconfig"
+ ln -sf "$PWD/ghostty" "$HOME/.config/ghostty"
+ ln -sf "$PWD/btop" "$HOME/.config/btop"
+ ln -sf "$PWD/btop/themes" "$HOME/.config/btop/themes"
 
-mkdir -p "$HOME/.config/btop"
-ln -sf "$PWD/btop" "$HOME/.config/btop"
+ mkdir -p "$HOME/.config/btop"
+ ln -sf "$PWD/btop" "$HOME/.config/btop"
 
-# ln -sf "$PWD/.gitconfig" "$HOME/.gitconfig"
-#
+ # Set up SSH config
+ mkdir -p "$HOME/.ssh"
+ ln -sf "$PWD/.ssh/config" "$HOME/.ssh/config"
+ chmod 600 "$HOME/.ssh/config"
+ chmod 700 "$HOME/.ssh"
+ #
 
 # Create .config directories and symlinks
 mkdir -p "$HOME/.config/aerospace"
