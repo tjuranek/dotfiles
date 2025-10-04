@@ -56,6 +56,9 @@ defaults write com.apple.dock persistent-apps -array
 defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Safari.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
 defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Utilities/Terminal.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
 
+echo "  • Hiding Menu Bar..."
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
+
 echo "  • Configuring Window Dragging..."
 defaults write -g NSWindowShouldDragOnGesture -bool true
 
@@ -70,3 +73,4 @@ killall SystemUIServer 2>/dev/null || true
 echo ""
 echo "✅ Configuration complete!"
 echo "   Your system has been reset to defaults with custom dock settings applied."
+echo "   Note: Menu bar hiding requires logging out and back in to take effect."

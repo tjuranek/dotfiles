@@ -41,6 +41,9 @@ git remote set-url origin git@github.com:tjuranek/dotfiles.git
 mkdir -p "$HOME/.config/aerospace"
 ln -sf "$PWD/aerospace/aerospace.toml" "$HOME/.config/aerospace/aerospace.toml"
 
+mkdir -p "$HOME/.config/sketchybar"
+ln -sf "$PWD/sketchybar/sketchybarrc" "$HOME/.config/sketchybar/sketchybarrc"
+
 # Apply macOS defaults
 if [[ "$OSTYPE" == "darwin"* ]]; then
     echo ""
