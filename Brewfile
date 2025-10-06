@@ -27,7 +27,6 @@ cask "aerospace"
 
 tap "FelixKratz/formulae"
 brew "borders"
-brew "sketchybar"
 
 tap "sst/tap"
 brew "opencode"

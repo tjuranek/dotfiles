@@ -28,12 +28,15 @@ defaults delete NSGlobalDomain ApplePressAndHoldEnabled 2>/dev/null || true
 defaults delete NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled 2>/dev/null || true
 defaults delete NSGlobalDomain NSAutomaticDashSubstitutionEnabled 2>/dev/null || true
 defaults delete NSGlobalDomain com.apple.mouse.tapBehavior 2>/dev/null || true
-defaults delete NSGlobalDomain _HIHideMenuBar 2>/dev/null || true
+
 defaults delete NSGlobalDomain NSWindowShouldDragOnGesture 2>/dev/null || true
 defaults delete NSGlobalDomain NSAutomaticWindowAnimationsEnabled 2>/dev/null || true
 
 echo "  • Resetting Menu Bar Clock..."
 defaults delete com.apple.menuextra.clock 2>/dev/null || true
+
+echo "  • Resetting Battery Menu..."
+defaults delete com.apple.menuextra.battery 2>/dev/null || true
 
 echo "  • Resetting Activity Monitor..."
 defaults delete com.apple.ActivityMonitor 2>/dev/null || true
@@ -56,14 +59,22 @@ defaults write com.apple.dock persistent-apps -array
 defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Safari.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
 defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Utilities/Terminal.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
 
-echo "  • Hiding Menu Bar..."
-defaults write NSGlobalDomain _HIHideMenuBar -bool true
+echo "  • Configuring Menu Bar..."
+defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  h:mm:ss a"
+defaults write com.apple.menuextra.clock FlashDateSeparators -bool false
+defaults write com.apple.menuextra.clock IsAnalog -bool false
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
+
 
 echo "  • Configuring Window Dragging..."
 defaults write -g NSWindowShouldDragOnGesture -bool true
 
 echo "  • Disabling Window Animations..."
 defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
+
+echo "  • Ensuring Menu Bar is always visible..."
+defaults write NSGlobalDomain _HIHideMenuBar -bool false
 
 echo "  • Restarting system services..."
 killall Dock 2>/dev/null || true
@@ -72,5 +83,4 @@ killall SystemUIServer 2>/dev/null || true
 
 echo ""
 echo "✅ Configuration complete!"
-echo "   Your system has been reset to defaults with custom dock settings applied."
-echo "   Note: Menu bar hiding requires logging out and back in to take effect."
+echo "   Your system has been reset to defaults with custom dock and menu bar settings applied."
