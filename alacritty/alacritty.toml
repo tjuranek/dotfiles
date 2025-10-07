@@ -2,11 +2,11 @@
 TERM = "xterm-256color"
 
 [window]
-opacity = 0.90
-blur = true
+# opacity = 0.85
+# blur = true
 decorations = "Buttonless"
-padding.x = 10
-padding.y = 10
+padding.x = 5
+padding.y = 5
 
 [font]
 bold.family = "CaskaydiaMono Nerd Font"
