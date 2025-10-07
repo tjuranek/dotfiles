@@ -210,15 +210,3 @@ automatically-unhide-macos-hidden-apps = false
     down = 'volume down'
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
-
-[[on-window-detected]]
-if.app-id="com.mitchellh.ghostty"
-run= [
-  "layout tiling",
-]
-
-[[on-window-detected]]
-if.app-id = 'com.apple.MobileSMS'
-run = [
-    'layout floating',
-]
