@@ -1,3 +1,5 @@
+cask_args no_quarantine: true
+
 # CLI tools
 brew "azure-cli"
 brew "starship"
@@ -12,6 +14,11 @@ brew "eza"
 brew "zoxide"
 brew "ripgrep"
 brew "fd"
+brew "gcc"
+brew "tree-sitter-cli"
+brew "ripgrep"
+
+cask "alacritty"
 
 cask "ghostty"
 cask "google-chrome"
@@ -33,3 +40,4 @@ brew "opencode"
 
 cask "raycast"
 
+brew "zsh-vi-mode"

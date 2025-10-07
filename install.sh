@@ -23,6 +23,8 @@ brew bundle install
  ln -sf "$PWD/ghostty" "$HOME/.config/ghostty"
  ln -sf "$PWD/btop" "$HOME/.config/btop"
  ln -sf "$PWD/btop/themes" "$HOME/.config/btop/themes"
+ ln -sf "$PWD/alacritty" "$HOME/.config/alacritty"
+
 
  mkdir -p "$HOME/.config/btop"
  ln -sf "$PWD/btop" "$HOME/.config/btop"
