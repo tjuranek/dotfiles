@@ -2,6 +2,7 @@ export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+eval "$(mise activate zsh)"
 
 alias ..='cd ..'
 alias ...='cd ../..'
