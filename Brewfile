@@ -17,6 +17,8 @@ brew "fd"
 brew "gcc"
 brew "tree-sitter-cli"
 brew "ripgrep"
+brew "tmux"
+brew "mise"
 
 cask "alacritty"
 cask "google-chrome"

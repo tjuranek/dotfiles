@@ -1,41 +1,27 @@
 #!/bin/bash
 
-# Install Homebrew if not installed
-if ! command -v brew &>/dev/null; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  # Add Homebrew to PATH for this session
-  if [[ -f "/opt/homebrew/bin/brew" ]]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  elif [[ -f "/usr/local/bin/brew" ]]; then
-    eval "$(/usr/local/bin/brew shellenv)"
-  fi
-fi
+# Idempotent install script. Assumes this repository was pulled in via the
+# bootstrap script, meaning brew was installed and all configuration files
+# were cloned.
 
 # Install packages from Brewfile
 brew bundle install
 
-# Create symlinks for dotfiles
+# Create and link all configurations
 mkdir -p "$HOME/.config"
-ln -sf "$PWD/zsh/.zshrc" "$HOME/.zshrc"
-ln -sf "$PWD/starship/starship.toml" "$HOME/.config/starship.toml"
-ln -sf "$PWD/.gitconfig" "$HOME/.gitconfig"
+ln -sf "$PWD/ssh" "$HOME/.ssh"
+ln -sf "$PWD/aerospace" "$HOME/.config/aerospace"
 ln -sf "$PWD/alacritty" "$HOME/.config/alacritty"
+ln -sf "$PWD/git" "$HOME/.config/git"
 ln -sf "$PWD/nvim" "$HOME/.config/nvim"
+ln -sf "$PWD/opencode" "$HOME/.config/opencode"
+ln -sf "$PWD/ssh" "$HOME/.ssh"
+ln -sf "$PWD/starship" "$HOME/.config/starship"
+ln -sf "$PWD/tmux" "$HOME/.config/tmux"
+ln -sf "$PWD/zsh/.zshrc" "$HOME/.zshrc"
 
-# Set up SSH config
-mkdir -p "$HOME/.ssh"
-ln -sf "$PWD/.ssh/config" "$HOME/.ssh/config"
-chmod 600 "$HOME/.ssh/config"
-chmod 700 "$HOME/.ssh"
-#
-
-# Switch git remote to SSH
+# Switch git remote to SSH since HTTP used in bootstrap
 git remote set-url origin git@github.com:tjuranek/dotfiles.git
-
-# Create .config directories and symlinks
-mkdir -p "$HOME/.config/aerospace"
-ln -sf "$PWD/aerospace/aerospace.toml" "$HOME/.config/aerospace/aerospace.toml"
-ln -sf "$PWD/tmux/tmux.conf" "$HOME/.tmux.conf"
 
 # Apply macOS defaults
 if [[ "$OSTYPE" == "darwin"* ]]; then
