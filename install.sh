@@ -16,7 +16,7 @@ brew bundle install
 
 # Create symlinks for dotfiles
 mkdir -p "$HOME/.config"
-ln -sf "$PWD/.zshrc" "$HOME/.zshrc"
+ln -sf "$PWD/zsh/.zshrc" "$HOME/.zshrc"
 ln -sf "$PWD/starship/starship.toml" "$HOME/.config/starship.toml"
 ln -sf "$PWD/.gitconfig" "$HOME/.gitconfig"
 ln -sf "$PWD/alacritty" "$HOME/.config/alacritty"
@@ -35,6 +35,7 @@ git remote set-url origin git@github.com:tjuranek/dotfiles.git
 # Create .config directories and symlinks
 mkdir -p "$HOME/.config/aerospace"
 ln -sf "$PWD/aerospace/aerospace.toml" "$HOME/.config/aerospace/aerospace.toml"
+ln -sf "$PWD/tmux/tmux.conf" "$HOME/.tmux.conf"
 
 # Apply macOS defaults
 if [[ "$OSTYPE" == "darwin"* ]]; then
