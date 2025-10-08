@@ -19,12 +19,8 @@ brew "tree-sitter-cli"
 brew "ripgrep"
 
 cask "alacritty"
-
-cask "ghostty"
 cask "google-chrome"
-
 cask "font-caskaydia-mono-nerd-font"
-
 cask "1password"
 cask "1password-cli"
 cask "spotify"

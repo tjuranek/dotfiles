@@ -1,7 +1,5 @@
-eval "$(starship init zsh)"
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
-# File Tree
+eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 alias ls='eza -lh --group-directories-first --icons=auto'
@@ -19,9 +17,9 @@ zd() {
     z "$@" && printf "\U000F17A9 " && pwd || echo "Error: Directory not found"
   fi
 }
- open() {
-   xdg-open "$@" >/dev/null 2>&1 &
- }
+open() {
+  xdg-open "$@" >/dev/null 2>&1 &
+}
 
 # 1Password SSH Agent Setup
 setup_1password_ssh() {
