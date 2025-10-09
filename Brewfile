@@ -22,6 +22,7 @@ brew "libyaml"
 brew "gmp"
 
 cask "alacritty"
+cask "postman"
 cask "google-chrome"
 cask "font-caskaydia-mono-nerd-font"
 cask "1password"
