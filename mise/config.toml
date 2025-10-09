@@ -1,9 +1,10 @@
 [tools]
 python = "3.14"
 ruby = "3.4"
-node = "24"
+node = "22.20.0"
 go = "1.25"
 rust = "1.90"
+deno = "latest"
 
 # You can also specify multiple versions
 # python = ["3.11", "3.12"]
