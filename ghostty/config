@@ -1,0 +1,29 @@
+# Font
+font-family = CaskaydiaMono Nerd Font
+font-style = Bold
+font-style-bold = Bold
+font-style-italic = Bold
+font-size = 14
+
+# Window
+window-decoration = false
+window-padding-x = 5
+window-padding-y = 5
+
+# Theme (Catppuccin Mocha)
+theme = Catppuccin Mocha
+
+# Cursor
+cursor-style = block
+
+# Scrollback
+scrollback-limit = 10000
+
+# Clipboard
+copy-on-select = clipboard
+
+# Terminal
+term = xterm-256color
+
+# Auto-attach tmux session
+command = /opt/homebrew/bin/tmux new-session -A -s main

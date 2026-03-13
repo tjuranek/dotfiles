@@ -1,3 +1,22 @@
-# SSH Configuration for 1Password SSH Agent
+# Added by OrbStack: 'orb' SSH host for Linux machines
+# This only works if it's at the top of ssh_config (before any Host blocks).
+# This won't be added again if you remove it.
+Include ~/.orbstack/ssh/config
+
 Host *
-    IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_ed25519
+
+Host clanker
+    HostName 2606:a5c0:0:42:8261:5fff:fe15:472b
+    User ubuntu
+    ServerAliveInterval 60
+    ServerAliveCountMax 120
+
+# OpenClaw automation - bypasses 1Password
+Host gitlab-auto
+    HostName gitlab.com
+    User git
+    IdentityFile ~/.ssh/openclaw_gitlab
+    IdentitiesOnly yes

@@ -1,43 +1,25 @@
 cask_args no_quarantine: true
 
-# CLI tools
-brew "azure-cli"
+# CLI
 brew "starship"
-brew "docker"
-brew "lazygit"
-brew "lazydocker"
 brew "neovim"
-brew "btop"
+brew "tmux"
 brew "fzf"
 brew "eza"
 brew "zoxide"
 brew "ripgrep"
 brew "fd"
-brew "tree-sitter-cli"
-brew "ripgrep"
-brew "tmux"
+brew "lazygit"
 brew "mise"
-brew "openssl@3"
-brew "libyaml"
-brew "gmp"
+brew "zsh-vi-mode"
 
-cask "alacritty"
-cask "postman"
-cask "google-chrome"
+# Apps
+cask "ghostty"
 cask "font-caskaydia-mono-nerd-font"
 cask "1password"
-cask "1password-cli"
-cask "spotify"
+cask "raycast"
+cask "orbstack"
 
+# Window management
 tap "nikitabobko/tap"
 cask "aerospace"
-
-tap "FelixKratz/formulae"
-brew "borders"
-
-tap "sst/tap"
-brew "opencode"
-
-cask "raycast"
-
-brew "zsh-vi-mode"

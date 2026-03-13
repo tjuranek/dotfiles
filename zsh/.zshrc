@@ -4,8 +4,6 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
 
-# 1Password SSH Agent
-export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -27,6 +25,12 @@ zd() {
   fi
 }
 
+alias clanker="claude --dangerously-skip-permissions"
+
 open() {
-  xdg-open "$@" >/dev/null 2>&1 &
+  command open "$@"
 }
+export PATH="$HOME/.local/bin:$PATH"
+
+# direnv
+eval "$(direnv hook zsh)"

@@ -12,16 +12,14 @@ brew bundle install
 
 # Create and link all configurations
 mkdir -p "$HOME/.config"
-ln -sf "$PWD/ssh" "$HOME/.ssh"
-ln -sf "$PWD/aerospace" "$HOME/.config/aerospace"
-ln -sf "$PWD/alacritty" "$HOME/.config/alacritty"
-ln -sf "$PWD/git" "$HOME/.config/git"
-ln -sf "$PWD/mise" "$HOME/.config/mise"
-ln -sf "$PWD/nvim" "$HOME/.config/nvim"
-ln -sf "$PWD/opencode" "$HOME/.config/opencode"
-ln -sf "$PWD/ssh" "$HOME/.ssh"
-ln -sf "$PWD/starship" "$HOME/.config/starship"
-ln -sf "$PWD/tmux" "$HOME/.config/tmux"
+ln -sfn "$PWD/ssh" "$HOME/.ssh"
+ln -sfn "$PWD/aerospace" "$HOME/.config/aerospace"
+ln -sf "$PWD/ghostty/config" "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
+ln -sfn "$PWD/git" "$HOME/.config/git"
+ln -sfn "$PWD/mise" "$HOME/.config/mise"
+ln -sfn "$PWD/nvim" "$HOME/.config/nvim"
+ln -sfn "$PWD/starship" "$HOME/.config/starship"
+ln -sfn "$PWD/tmux" "$HOME/.config/tmux"
 ln -sf "$PWD/zsh/.zshrc" "$HOME/.zshrc"
 
 # Install runtimes from Mise config
