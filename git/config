@@ -1,6 +1,7 @@
 [user]
 	name = Thomas Juranek
-	email = thomas.juranek@hydrahost.com
+	email = dev@thomasjuranek.com
+    signingkey = ~/.ssh/id_ed25519.pub
 
 [github]
     user = tjuranek
@@ -22,5 +23,20 @@
 [color]
     ui = auto
 
+[commit]
+    gpgsign = true
+
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+    allowedSignersFile = ~/.ssh/allowed_signers
+
 [credential]
 	helper = osxkeychain
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
