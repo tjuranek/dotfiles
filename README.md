@@ -9,12 +9,13 @@ bash <(curl -fsSL https://raw.githubusercontent.com/tjuranek/dotfiles/master/boo
 cd ~/repos/dotfiles && ./install.sh
 ```
 
+`install.sh` finds Homebrew at `/opt/homebrew` or `/usr/local` if it is not on `PATH` yet. If the Command Line Tools installer appears, finish it and run `./install.sh` again.
+
 ## What's Included
 
 | Config | What |
 |--------|------|
-| `ghostty/` | Terminal (Catppuccin Mocha, CaskaydiaMono Nerd Font) |
-| `nvim/` | Neovim (LazyVim) |
+| `kitty/` | Terminal (Catppuccin Mocha, CaskaydiaMono Nerd Font) |
 | `tmux/` | tmux (C-a prefix, vim nav) |
 | `zsh/` | Shell aliases, zoxide, starship prompt |
 | `aerospace/` | Tiling window manager |
@@ -32,6 +33,6 @@ cd ~/repos/dotfiles && ./install.sh
 ## Manual Steps
 
 After install:
-- Grant privacy/security permissions to AeroSpace, Raycast, etc.
+- Grant privacy/security permissions to AeroSpace
 - Set up 1Password
-- Configure SSH keys for git
+- Copy `id_ed25519` into `~/repos/dotfiles/ssh/`. That directory is `~/.ssh`, and the private key is not in the repo. `install.sh` points the remote at `git@github.com`, so the next pull needs this key.

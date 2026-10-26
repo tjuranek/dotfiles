@@ -2,7 +2,6 @@ cask_args no_quarantine: true
 
 # CLI
 brew "starship"
-brew "neovim"
 brew "tmux"
 brew "fzf"
 brew "eza"
@@ -14,12 +13,13 @@ brew "mise"
 brew "zsh-vi-mode"
 
 # Apps
-cask "ghostty"
+cask "kitty"
 cask "font-caskaydia-mono-nerd-font"
 cask "1password"
-cask "raycast"
 cask "orbstack"
 
-# Window management
-tap "nikitabobko/tap"
+# Window management. Third-party taps are ignored until trusted.
+tap "felixkratz/formulae", trusted: { formulae: ["borders"] }
+brew "borders"
+tap "nikitabobko/tap", trusted: { casks: ["aerospace"] }
 cask "aerospace"

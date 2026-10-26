@@ -7,7 +7,6 @@
     user = tjuranek
 
 [core]
-    editor = nvim
     autocrlf = input
 
 [init]

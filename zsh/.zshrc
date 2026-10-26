@@ -25,12 +25,7 @@ zd() {
   fi
 }
 
-alias clanker="claude --dangerously-skip-permissions"
-
 open() {
   command open "$@"
 }
 export PATH="$HOME/.local/bin:$PATH"
-
-# direnv
-eval "$(direnv hook zsh)"
