@@ -1,5 +1,3 @@
-cask_args no_quarantine: true
-
 # CLI
 brew "starship"
 brew "tmux"
