@@ -20,8 +20,6 @@ cd ~/repos/dotfiles && ./install.sh
 | `zsh/` | Shell aliases, zoxide, starship prompt |
 | `aerospace/` | Tiling window manager |
 | `starship/` | Prompt theme |
-| `git/` | Git config |
-| `ssh/` | SSH config |
 | `mise/` | Runtime versions (node, python) |
 
 ### Scripts
@@ -35,4 +33,4 @@ cd ~/repos/dotfiles && ./install.sh
 After install:
 - Grant privacy/security permissions to AeroSpace
 - Set up 1Password
-- Copy `id_ed25519` into `~/repos/dotfiles/ssh/`. That directory is `~/.ssh`, and the private key is not in the repo. `install.sh` points the remote at `git@github.com`, so the next pull needs this key.
+- Create `~/.ssh/id_ed25519` and `~/.ssh/id_ed25519.pub` from 1Password (`chmod 600` the private key). `install.sh` points the remote at `git@github.com`, so the next pull needs this key.

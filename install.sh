@@ -31,14 +31,8 @@ brew bundle install
 # Create and link all configurations. An existing real directory would make
 # ln drop the symlink inside it and leave the old files in place.
 mkdir -p "$HOME/.config"
-if [[ -e "$HOME/.ssh" && ! -L "$HOME/.ssh" ]]; then
-  echo "~/.ssh already exists and is not a symlink. Move it aside, then re-run ./install.sh"
-  exit 1
-fi
-ln -sfn "$PWD/ssh" "$HOME/.ssh"
 ln -sfn "$PWD/aerospace" "$HOME/.config/aerospace"
 ln -sfn "$PWD/kitty" "$HOME/.config/kitty"
-ln -sfn "$PWD/git" "$HOME/.config/git"
 ln -sfn "$PWD/mise" "$HOME/.config/mise"
 ln -sfn "$PWD/starship" "$HOME/.config/starship"
 ln -sfn "$PWD/tmux" "$HOME/.config/tmux"
